@@ -3,10 +3,6 @@ class EmailController < ApplicationController
   def index
 
     @email = Email.all
-    respond_to do |format|
-      format.html { }
-      format.js {}
-    end 
 
   end
 
@@ -52,6 +48,10 @@ class EmailController < ApplicationController
 
     @email = Email.find(params[:id])
     @email.update(read:false)
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js {}
+    end
 
   end
 

@@ -4,6 +4,7 @@ alert("le JS s'est éxécuté");
 document.getElementById("email_body").insertAdjacentHTML("beforeend", "<%= j render 'show_email', email: @email %>");
 
 
+document.getElementById("email-"+<%= @email.id%>).style.fontWeight = null
 
 
 /*
