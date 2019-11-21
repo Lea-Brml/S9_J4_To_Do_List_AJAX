@@ -1,6 +1,13 @@
 
 
-        <p>zjkehrjkzehrjkze</p>
+        <h1 style="padding-left:120px; padding-bottom:60px;">Bonjour ! Vous avez des e-mails !</h1>
+
+
+        <center>
+          <%= link_to "Recevoir un Email", email_index_path,  method: :post, remote: true, class:"btn btn-outline-primary" %>
+        </center>
+
+        <br><br>
 
 
 <div class="container row" style="margin-right:auto;margin-left:auto;">
@@ -24,13 +31,13 @@
 
 <div class="container row" style="margin-right:auto;margin-left:auto;" id="email_object">
 
-  <% @email.each do |t| %>
-
     <div class="col-4 list-group">
-      <%if t.read == false %>
-        <div class="delete"><li class="list-group-item bold" id="email-<%= t.id%>" style="font-weight:bold;">Object : <a href="<%= email_path(t)%>" data-remote="true" id="lienlien"><%= t.object %></a></li></div>
-      <% else%>
-        <div class="delete"><li class="list-group-item" id="email-<%= t.id%>"> Object : <a href="<%= email_path(t)%>" data-remote="true" ><%= t.object %></a><br><small>Lu ? <%=t.read%> </small></li></div>
+      <% @email.each do |t| %>
+        <%if t.read == false %>
+          <div class="delete"><li class="list-group-item bold" id="email-<%= t.id%>" style="font-weight:bold;">Object : <a href="<%= email_path(t)%>" data-remote="true" id="lienlien"><%= t.object %></a><br><small><%=t.created_at%></small></li></div>
+        <% else%>
+          <div class="delete"><li class="list-group-item" id="email-<%= t.id%>"> Object : <a href="<%= email_path(t)%>" data-remote="true" ><%= t.object %></a><br><small><%=t.created_at%></small></li></div>
+        <%end%>
       <%end%>
 
     </div>
@@ -40,12 +47,5 @@
             <!-- <li class="list-group-item" >  </li> -->
 
     </div>
-  <%end%>
 
-      </div>
-
-      <br><br>
-
-      <center>
-        <%= link_to "Recevoir un Email", email_index_path,  method: :post, remote: true, class:"btn btn-outline-primary" %>
-      </center>
+</div>
