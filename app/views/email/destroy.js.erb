@@ -1,0 +1,10 @@
+alert("passe par JS")
+
+
+document.getElementById('delete')
+
+$(document).ready(function() {
+  $("#email-"+ <%= @email.id %>).remove();
+});
+
+document.getElementById('delete_partial').remove()

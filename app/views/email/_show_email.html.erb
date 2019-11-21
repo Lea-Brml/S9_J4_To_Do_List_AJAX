@@ -1,11 +1,15 @@
-
+<div id="delete_partial">
 
 <div class="card" style="width: 26rem; ">
   <div class="card-body">
     <img src="http://www.asr-tarbes.fr/wp-content/uploads/2017/03/icone-mail-bleu-clair.png" class="card-img-top" alt="..." style="width:18%;"><br>
-    <h5 class="card-title"><%= @email.object %></h5>
+    <h4 class="card-title"><%= @email.object %></h4>
     <p class="card-text"><%= @email.body %></p>
     <a href="#" class="btn btn-outline-primary">Marquer comme non lu</a>
-    <a href="#" class="btn btn-outline-danger">Supprimer</a>
+
+    <%= link_to "supprimer", email_path(), data: {:confirm => "Es tu sur de vouloir suprrimer ?"}, :method => :delete, class:"btn btn-outline-danger", remote:true %>
+    <!--<a href="#" class="btn btn-outline-danger">Supprimer</a>-->
   </div>
+</div>
+
 </div>

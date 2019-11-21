@@ -7,13 +7,13 @@
 
     <div class="col-6 list-group">
 
-      <li class="list-group-item active">Liste des Emails</li>
+      <p class="list-group-item active">Liste des Emails</p>
 
     </div>
 
     <div class="col-6 list-group">
 
-      <li class="list-group-item active">Email selectionné</li>
+      <p class="list-group-item active">Email selectionné</p>
 
     </div>
 
@@ -28,7 +28,7 @@
 
     <div class="col-6 list-group" >
 
-        <li class="list-group-item">Object : <a href="<%= email_path(t)%>" id="lien" data-remote="true" ><%= t.object %></a></li>
+        <div class="delete"><li class="list-group-item" id="email-<%= t.id%>">Object : <a href="<%= email_path(t)%>" id="lien" data-remote="true" ><%= t.object %></a></li></div>
 
     </div>
 
@@ -44,13 +44,5 @@
 <br><br>
 
 <center>
-  <a type="button" class="btn btn-outline-primary" >
-  <%= link_to "Recevoir un Email", email_index_path,  method: :post, remote: true %></a>
+  <%= link_to "Recevoir un Email", email_index_path,  method: :post, remote: true, class:"btn btn-outline-primary" %>
 </center>
-
-
-
-<% @email.each do |t| %>
-  <p> Object : <%= t.object %><br> </p>
-  <p> Body : <%= t.body %> </p>
-<%end%>
