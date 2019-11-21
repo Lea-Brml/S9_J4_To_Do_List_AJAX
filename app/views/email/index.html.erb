@@ -27,22 +27,25 @@
   <% @email.each do |t| %>
 
     <div class="col-6 list-group" >
-
-        <div class="delete"><li class="list-group-item" id="email-<%= t.id%>">Object : <a href="<%= email_path(t)%>" id="lien" data-remote="true" ><%= t.object %></a></li></div>
+      <%if t.read == false %>
+        <div class="delete"><li class="list-group-item" id="email-<%= t.id%>" style="font-weight:bold;">Object : <a href="<%= email_path(t)%>" id="lien" data-remote="true" ><%= t.object %></a><br><small>Lu ? <%=t.read%> </small></li></div>
+      <% else%>
+        <div class="delete"><li class="list-group-item" id="email-<%= t.id%>"> Object : <a href="<%= email_path(t)%>" id="lien" data-remote="true" ><%= t.object %></a><br><small>Lu ? <%=t.read%> </small></li></div>
+      <%end%>
 
     </div>
 
-     <div class="col-6 list-group" style=" background-color:#EBF7FF;" id="email_body">
+    <div class="col-6 list-group" style=" background-color:#EBF7FF;" id="email_body">
 
-      <!-- <li class="list-group-item" >  </li> -->
+            <!-- <li class="list-group-item" >  </li> -->
 
     </div>
   <%end%>
 
-</div>
+      </div>
 
-<br><br>
+      <br><br>
 
-<center>
-  <%= link_to "Recevoir un Email", email_index_path,  method: :post, remote: true, class:"btn btn-outline-primary" %>
-</center>
+      <center>
+        <%= link_to "Recevoir un Email", email_index_path,  method: :post, remote: true, class:"btn btn-outline-primary" %>
+      </center>

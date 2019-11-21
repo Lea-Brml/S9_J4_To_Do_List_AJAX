@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Email.destroy_all
+
 require 'faker'
 3.times do
   my_category = Category.create(title: Faker::Book.genre)
@@ -20,6 +22,6 @@ end
 
 10.times do
 
-  Email.create(object: Faker::Book.title, body: Faker::Beer.name)
+  Email.create(object: Faker::Book.title, body: Faker::Beer.name, read: false)
 
 end

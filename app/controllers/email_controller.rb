@@ -10,7 +10,7 @@ class EmailController < ApplicationController
   def show
 
     @email = Email.find(params[:id])
-
+    @email.update(read:true)
     respond_to do |format|
       format.html { }
       format.js {}
@@ -28,7 +28,7 @@ class EmailController < ApplicationController
 
   def create
 
-    @email =  Email.create(object: Faker::Book.title, body: Faker::Beer.name)
+    @email =  Email.create(object: Faker::Book.title, body: Faker::Beer.name, read: false)
 
     if @email.save
       flash[:notice] = "Email envoyé !"
