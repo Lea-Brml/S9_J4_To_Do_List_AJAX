@@ -26,11 +26,11 @@
 
   <% @email.each do |t| %>
 
-    <div class="col-6 list-group" >
+    <div class="col-6 list-group">
       <%if t.read == false %>
-        <div class="delete"><li class="list-group-item" id="email-<%= t.id%>" style="font-weight:bold;">Object : <a href="<%= email_path(t)%>" id="lien" data-remote="true" ><%= t.object %></a><br><small>Lu ? <%=t.read%> </small></li></div>
+        <div class="delete"><li class="list-group-item bold" id="email-<%= t.id%>" style="font-weight:bold;">Object : <a href="<%= email_path(t)%>" id="lien" data-remote="true" ><%= t.object %></a><br><small>Lu ? <%=t.read%> </small></li></div>
       <% else%>
-        <div class="delete"><li class="list-group-item" id="email-<%= t.id%>"> Object : <a href="<%= email_path(t)%>" id="lien" data-remote="true" ><%= t.object %></a><br><small>Lu ? <%=t.read%> </small></li></div>
+        <div class="delete"><li class="list-group-item" id="email-<%= t.id%>"> Object : <a href="<%= email_path(t)%>" data-remote="true" ><%= t.object %></a><br><small>Lu ? <%=t.read%> </small></li></div>
       <%end%>
 
     </div>

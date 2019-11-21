@@ -3,6 +3,10 @@ class EmailController < ApplicationController
   def index
 
     @email = Email.all
+    respond_to do |format|
+      format.html { }
+      format.js {}
+    end 
 
   end
 
