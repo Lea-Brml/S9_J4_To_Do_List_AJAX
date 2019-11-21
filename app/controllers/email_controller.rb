@@ -56,7 +56,6 @@ class EmailController < ApplicationController
   end
 
 
-
   def destroy
 
     @email = Email.find(params[:id])
