@@ -28,7 +28,7 @@ class EmailController < ApplicationController
 
   def create
 
-    @email =  Email.create(object: Faker::Book.title, body: Faker::Beer.name, read: false)
+    @email =  Email.create(object: Faker::Book.title, body: Faker::Beer.name, read: false, mail_adress: Faker::Internet.email)
 
     if @email.save
       flash[:notice] = "Email envoyé !"

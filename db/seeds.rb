@@ -22,6 +22,6 @@ end
 
 10.times do
 
-  Email.create(object: Faker::Book.title, body: Faker::Beer.name, read: false)
+  Email.create(object: Faker::Book.title, body: Faker::Beer.name, read: false, mail_adress: Faker::Internet.email)
 
 end
