@@ -5,13 +5,13 @@
 
 <div class="container row" style="margin-right:auto;margin-left:auto;">
 
-    <div class="col-6 list-group">
+    <div class="col-4 list-group">
 
       <p class="list-group-item active">Liste des Emails</p>
 
     </div>
 
-    <div class="col-6 list-group">
+    <div class="col-8 list-group">
 
       <p class="list-group-item active">Email selectionné</p>
 
@@ -26,7 +26,7 @@
 
   <% @email.each do |t| %>
 
-    <div class="col-6 list-group">
+    <div class="col-4 list-group">
       <%if t.read == false %>
         <div class="delete"><li class="list-group-item bold" id="email-<%= t.id%>" style="font-weight:bold;">Object : <a href="<%= email_path(t)%>" data-remote="true" id="lienlien"><%= t.object %></a></li></div>
       <% else%>
@@ -35,7 +35,7 @@
 
     </div>
 
-    <div class="col-6 list-group"  id="email_body">
+    <div class="col-8 list-group"  id="email_body">
 
             <!-- <li class="list-group-item" >  </li> -->
 
