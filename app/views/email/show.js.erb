@@ -1,0 +1,21 @@
+alert("le JS s'est éxécuté");
+
+
+document.getElementById("email_body").insertAdjacentHTML("beforeend", "<%= j render 'show_email', email: @email %>");
+
+
+
+
+/*
+var lien = document.getElementById("lien")
+var body = document.getElementById("email-body")
+
+function Click() {
+  lien.insertAdjacentHTML("beforeend", "<%= j render 'show_email', email: @email %>");
+}
+
+lien.addEventListener("click",Click);
+*/
+
+
+//{document.getElementById("email-body").insertAdjacentHTML("beforeend", "<%= j render 'show_email', email: @email %>");}
